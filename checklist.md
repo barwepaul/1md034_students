@@ -23,7 +23,7 @@ Create an index.html file which contains:
 	- [x] A name
 	- [x] An image
 	- [x] Information about allergies 
-- [ ] A section to collect customer information:
+- [x] A section to collect customer information:
 	- [x] First- and Last Name (in one field)
 	- [x] E-Mail Address
 	- [x] Street
@@ -43,7 +43,7 @@ Add the following style/behaviour to your website (mostly in style.css but also 
 - [x] Create an empty style definition for the section with unchanged text and background
 - [x] Change the cursor and background when hovering over the order button
 - [x] Define a table width and center it
-- [ ] Add margins to the sections and the order button
+- [x] Add margins to the sections and the order button
 - [ ] Add a border to the two sections
 - [ ] Add an image after your headline and make it slightly transparent
 - [ ] Place the image behind your headline to finalize your header

@@ -11,10 +11,11 @@ body {
 .Burgers {
 	color: #FFFFFF;
 	background-color: #000000;
+	margin: 5%;
 }
 
 .Order {
-
+	margin: 5%;
 }
 
 button:hover {
@@ -22,8 +23,11 @@ button:hover {
 	cursor: pointer;
 }
 
+button {
+	margin-left: 2%;
+}
+
 table {
 	width: 100%;
 	margin: 0 auto;
-
 }
