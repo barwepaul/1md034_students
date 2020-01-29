@@ -11,11 +11,20 @@ body {
 .Burgers {
 	color: #FFFFFF;
 	background-color: #000000;
-	margin: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
+	border-style: Dashed;
+	border-width: 5px;
+	padding: 3%;
 }
 
 .Order {
-	margin: 5%;
+	margin-left: 5%;
+	margin-right:5%;
+	border-style: Dashed;
+	border-color: #000000;
+	border-width: 5px;
+	padding: 5%;
 }
 
 button:hover {
