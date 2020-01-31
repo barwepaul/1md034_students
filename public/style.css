@@ -1,0 +1,129 @@
+body {
+    font-family: Arial;
+	font-size: 110%;
+}
+
+#Allergies {
+	font-weight: bold;
+
+}
+
+.Burgers {
+	color: #FFFFFF;
+	background-color: #000000;
+	margin-left: 5%;
+	margin-right: 5%;
+	border-style: Dashed;
+	border-width: 5px;
+	padding: 3%;
+
+
+}
+
+.Order {
+	margin-left: 5%;
+	margin-right:5%;
+	border-style: Dashed;
+	border-color: #000000;
+	border-width: 5px;
+	padding: 5%;
+}
+
+button:hover {
+    background-color: #C7C7C7;
+	cursor: pointer;
+}
+
+button {
+	margin-left: 2%;
+}
+
+table {
+	width: 100%;
+	margin: 0 auto;
+}
+
+header {
+	height: 50vh;
+	overflow: hidden;
+}
+
+
+h1 {
+	position: absolute;
+	z-index:3;
+	padding-left: 12%;
+	padding-top: 6%;
+}
+
+#head_image {
+	opacity: 0.5;
+	width: 100%;
+	
+}
+
+
+
+.wrapper {
+    display: grid;
+    grid-gap: 2%;
+   
+	
+ }
+
+ .box {
+    background-color: #000000;
+    color: #fff;
+	text-align: center;
+	margin: 0 auto;
+ }
+
+ .a1 {
+    grid-column: 1;
+	grid-row:1;
+	font-weight: bold; 
+ }
+ 
+ .a2 {
+    grid-column: 2 ;
+    grid-row: 1;
+	font-weight: bold;
+ }
+ .a3 {
+    grid-column: 3 ;
+    grid-row: 1 ;
+	font-weight: bold;
+ }
+ 
+ .b1 {
+    grid-column: 1
+	grid-row: 2;
+ }
+ 
+ .b2 {
+    grid-column: 2;
+	grid-row:2;	
+ }
+ .b3 {
+    grid-column: 3;
+	grid-row:2;  	
+ }
+ 
+ .c1 {
+    grid-column: 1;
+	grid-row: 3;
+	text-align: left;
+
+ }
+ 
+ .c2 {
+    grid-column: 2;
+	grid-row: 3;
+	text-align: left;
+ }
+ 
+ .c3 {
+    grid-column: 3;
+	grid-row:3;
+	text-align: left;
+ }   
