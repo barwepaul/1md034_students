@@ -16,3 +16,14 @@ const b1 = new Vue({
    b5: info(bigSuperPlantBurger)
   }
 })
+
+
+var burg = [HappyBurger, bigHappyBurger, bigSuperHappyBurger, bigSuperHappyFunFunBurger, bigSuperPlantBurger];
+
+
+const box = new Vue({
+	el:'#burgers',
+  data:{
+   burg: burg
+   },
+ });

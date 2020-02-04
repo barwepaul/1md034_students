@@ -29,3 +29,16 @@ document.getElementById("b2").innerHTML = info(bigHappyBurger);
 document.getElementById("b3").innerHTML = info(bigSuperHappyBurger);
 document.getElementById("b4").innerHTML = info(bigSuperHappyFunFunBurger);
 document.getElementById("b5").innerHTML = info(bigSuperPlantBurger);
+
+
+var burgers = [HappyBurger, bigHappyBurger, bigSuperHappyBurger, bigSuperHappyFunFunBurger, bigSuperPlantBurger];
+
+let myElement = document.getElementById("myID");
+for (var i = 0; i < 5;s i++)
+{
+
+        let listItem = document.createElement("p");
+        let listValue = document.createTextNode(info(burgers[i]));
+        listItem.appendChild(listValue);
+        myElement.appendChild(listItem);
+}
