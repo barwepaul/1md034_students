@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="js/js_script.js"></script>
-		<script src="js/vue_script.js"></script>
+		<script src="js/js_script.js" defer></script>
+		<script src="js/vue_script.js" defer></script>
 		<script src="https://vuejs.org/js/vue.js"></script>
         <title>Order burgers</title>
         <meta charset="utf-8"/>
@@ -14,36 +14,53 @@
 			<h1 id = "heading">Välkommen till BIG SUPER HAPPY FUN FUN BURGERS</h1>
 			<img src="http://resources.mynewsdesk.com/image/upload/c_limit,dpr_2.625,f_auto,h_700,q_auto,w_360/nvvnn1ejqmr5yktsncym.jpg" alt="Span" title="burgers" id="head_image">
 		</header>
-	
-		<section class = "Burgers">	
-		<div class="wrapper">
-		<div class="box a1">Big happy burger</div>
-		<div class="box a2">Big super happy burger</div>
-		<div class="box a3">Big super happy fun fun burger</div>
-		<div class="box b1"><img src="https://www.burgerking.se/011_se/Product%20images/Burgers/image-thumb__13696__product_detail/Produktbilder%20Hemsida_unbelievable%20whopper..png" alt="Span" title="Burger" width="200"></div>
-		<div class="box b2"><img src="https://i2.wp.com/freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png?fit=895%2C895" alt="Span" title="Chicken Burger" width="200"></div>
-		<div class="box b3"><img src="https://cdn130.picsart.com/265297481027211.png?r1024x1024" alt="Span" title="Giant burger" width="200" height="200"></div>
-		<div class="box c1">
-			<ul>
-				<li>Its a juicy burger</li>
-				<li>20 kCal</li>
-				<li id = "Allergies">Contains lactose, gluten and beef</li>
-			</ul>
+		<section class = "burgerSection">	
+		<!--
+			<div class="row">
+			<div class="column">
+				<div id="HB">
+				</div>
+			</div>
+			<div class="column">
+				<div id="BHB">
+				</div>			
+			</div>				
+			<div class="column">
+				<div id="BSHB">
+				</div>			
+			</div>
+			<div class="column">
+				<div id="BSHFFB">
+				</div>			
+			</div>
+			<div class="column">
+				<div id="BSPB">
+				</div>			
+			</div>
+		-->
+		
+		<div id = "burgerBoxes" class = "row">
+			<div v-for = "(burger, index) in menu" class = "column">
+				<h3> {{burger.name}} </h3>
+				<img :src = "burger.burgerPic" width = "200" height = "200">
+				<ul>
+					<li>
+						{{burger.kCal}} kCal
+					</li>
+					
+					<li>
+						{{burger.description}}
+					</li>
+					<li>
+						{{burger.allergies}}
+					</li>
+				</ul>	
+			</div>
 		</div>
-		<div class="box c2">
-			<ul>
-				<li>Its a juicy burger with bacon</li> 
-				<li>30 kCal</li> 
-				<li id = "Allergies">Contains lactose, gluten, beef, and pork</li> 
-			</ul>		
-		</div>
-		<div class="box c3">
-			<ul>
-				<li>A giant juicy burger with everything</li> 
-				<li>50 000 kCal</li> 
-				<li id = "Allergies">	</li> 
-			</ul>		
-		</div>
+		
+
+
+		
 		
 		
  </div>

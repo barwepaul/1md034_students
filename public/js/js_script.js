@@ -1,9 +1,11 @@
-function menuItem(name, description, kCal, allergies, burgerPic) {
+/*
+function menuItem(name, description, kCal, allergies, burgerPic, id) {
     this.name = name; // The this keyword refers to the object itself
     this.kCal = kCal;
 	this.description = description;
     this.allergies = allergies;
 	this.burgerPic = burgerPic; 
+	this.id = id;
 	
 }
 
@@ -12,33 +14,47 @@ function info(item) {
 	
 }
 
-let HappyBurger = new menuItem("Happy Burger", "It's a burger for the kids", 10, "Lactose, gluten, beef", "https://bk-emea-prd.s3.amazonaws.com/sites/burgerking.co.uk/files/18492_BK_Web_KIDSHAMBURGER_300x270px.png"); 
-let bigHappyBurger = new menuItem("Big Happy Burger", "It's a juicy burger", 20, "Lactose, gluten, beef", "https://www.burgerking.se/011_se/Product%20images/Burgers/image-thumb__13696__product_detail/Produktbilder%20Hemsida_unbelievable%20whopper..png");
-let bigSuperHappyBurger = new menuItem("Big Super Happy Burger", "It's a juicy burger with bacon", 30, "lactose, gluten, beef, and pork", "https://i2.wp.com/freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png?fit=895%2C895");
-let bigSuperHappyFunFunBurger = new menuItem("Big Super Happy Fun Fun Burger", "A giant juicy burger with everything", 50000, "lactose, gluten, beef, pork and almost everything else", "https://cdn130.picsart.com/265297481027211.png?r1024x1024");  
-let bigSuperPlantBurger = new menuItem("Big Super Plant Burger", "It's a juice burger, but also vegan!", 30, "Gluten and beans", "https://i.ya-webdesign.com/images/chips-transparent-burger-5.png"); 
+let HappyBurger = new menuItem("Happy Burger", "It'	s a burger for the kids", 10, "Lactose, gluten, beef", "https://bk-emea-prd.s3.amazonaws.com/sites/burgerking.co.uk/files/18492_BK_Web_KIDSHAMBURGER_300x270px.png", "HB"); 
+let bigHappyBurger = new menuItem("Big Happy Burger", "It's a juicy burger", 20, "Lactose, gluten, beef", "https://www.burgerking.se/011_se/Product%20images/Burgers/image-thumb__13696__product_detail/Produktbilder%20Hemsida_unbelievable%20whopper..png", "BHB");
+let bigSuperHappyBurger = new menuItem("Big Super Happy Burger", "It's a juicy burger with bacon", 30, "lactose, gluten, beef, and pork", "https://i2.wp.com/freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png?fit=895%2C895", "BSHB");
+let bigSuperHappyFunFunBurger = new menuItem("Big Super Happy Fun Fun Burger", "A giant juicy burger with everything", 50000, "lactose, gluten, beef, pork and almost everything else", "https://cdn130.picsart.com/265297481027211.png?r1024x1024", "BSHFFB");  
+let bigSuperPlantBurger = new menuItem("Big Super Plant Burger", "It's a juice burger, but also vegan!", 30, "Gluten and beans", "https://i.ya-webdesign.com/images/chips-transparent-burger-5.png", "BSPB"); 
 
-console.log(info(HappyBurger));
-console.log(info(bigSuperHappyBurger));
-console.log(info(bigHappyBurger));
-console.log(info(bigSuperHappyFunFunBurger));
-console.log(info(bigSuperPlantBurger));
-
-document.getElementById("b1").innerHTML = info(HappyBurger);
-document.getElementById("b2").innerHTML = info(bigHappyBurger);
-document.getElementById("b3").innerHTML = info(bigSuperHappyBurger);
-document.getElementById("b4").innerHTML = info(bigSuperHappyFunFunBurger);
-document.getElementById("b5").innerHTML = info(bigSuperPlantBurger);
 
 
 var burgers = [HappyBurger, bigHappyBurger, bigSuperHappyBurger, bigSuperHappyFunFunBurger, bigSuperPlantBurger];
-
-let myElement = document.getElementById("myID");
-for (var i = 0; i < 5;s i++)
+var currentBurgers;
+//let myElement = document.getElementById("myID");
+for (var i = 0; i < burgers.length; i++)
 {
-
-        let listItem = document.createElement("p");
-        let listValue = document.createTextNode(info(burgers[i]));
-        listItem.appendChild(listValue);
-        myElement.appendChild(listItem);
+	currentBurger = burgers[i];
+	let id = document.getElementById(currentBurger.id);
+	let btn = document.createElement("h3"); 
+	btn.align = "center";
+	let htext = document.createTextNode(currentBurger.name); 
+	btn.appendChild(htext);
+	id.appendChild(btn);
+	
+	let img = document.createElement("img"); 
+	img.src = currentBurger.burgerPic;
+	img.width = 200;
+	img.height = 200;
+	id.appendChild(img);
+	
+	let ul = document.createElement("ul");
+	let description = document.createElement("li"); 
+	let descText = document.createTextNode(currentBurger.description);
+	description.appendChild(descText); 
+	let kCal = document.createElement("li");
+	let kCalText = document.createTextNode(currentBurger.kCal); 
+	kCal.appendChild(kCalText);
+	let allergies = document.createElement("li");
+	let allrgsText = document.createTextNode(currentBurger.allergies); 
+	allergies.appendChild(allrgsText);
+	ul.appendChild(description); 
+	ul.appendChild(kCal); 
+	ul.appendChild(allergies);
+	id.appendChild(ul);	
 }
+*/
+234
