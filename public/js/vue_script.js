@@ -16,7 +16,6 @@ const b1 = new Vue({
    b5: info(bigSuperPlantBurger)
   }
 })
-*/
 
 function menuItem(name, description, kCal, allergies, burgerPic, id) {
     this.name = name; // The this keyword refers to the object itself
@@ -39,12 +38,14 @@ let bigSuperHappyBurger = new menuItem("Big Super Happy Burger", "It's a juicy b
 let bigSuperHappyFunFunBurger = new menuItem("Big Super Happy Fun Fun Burger", "A giant juicy burger with everything", 50000, "lactose, gluten, beef, pork and almost everything else", "https://cdn130.picsart.com/265297481027211.png?r1024x1024", "BSHFFB");  
 let bigSuperPlantBurger = new menuItem("Big Super Plant Burger", "It's a juice burger, but also vegan!", 30, "Gluten and beans", "https://i.ya-webdesign.com/images/chips-transparent-burger-5.png", "BSPB"); 
 
-var menu = [HappyBurger, bigHappyBurger, bigSuperHappyBurger, bigSuperHappyFunFunBurger, bigSuperPlantBurger];
 
+
+var menu = [HappyBurger, bigHappyBurger, bigSuperHappyBurger, bigSuperHappyFunFunBurger, bigSuperPlantBurger];
+*/
 
 const box = new Vue({
 	el:"#burgerBoxes",
 	data:{
-		menu: menu
+		food: food
 	},
  });
