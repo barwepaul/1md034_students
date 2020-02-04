@@ -23,3 +23,9 @@ console.log(info(bigSuperHappyBurger));
 console.log(info(bigHappyBurger));
 console.log(info(bigSuperHappyFunFunBurger));
 console.log(info(bigSuperPlantBurger));
+
+document.getElementById("b1").innerHTML = info(HappyBurger);
+document.getElementById("b2").innerHTML = info(bigHappyBurger);
+document.getElementById("b3").innerHTML = info(bigSuperHappyBurger);
+document.getElementById("b4").innerHTML = info(bigSuperHappyFunFunBurger);
+document.getElementById("b5").innerHTML = info(bigSuperPlantBurger);
