@@ -56,5 +56,39 @@ for (var i = 0; i < burgers.length; i++)
 	ul.appendChild(allergies);
 	id.appendChild(ul);	
 }
+
+
+function getInfo()
+{
+	let name = document.getElementById("fullname").value
+	let email = document.getElementById("email").value
+	let street = document.getElementById("street").value
+	let house = document.getElementById("house").value
+	
+	var gender;
+	var radios = document.getElementsByName("gender");
+	for (var i = 0, length = radios.length; i < length; i++) {
+		if (radios[i].checked) {
+				gender = radios[i].value;
+				break;
+			}
+		}
+	let pay = document.getElementById("payment_method").value;  
+	
+	let info = [name, email, street, house, gender, pay]; 
+	return info; 
+
+}
+
+
+function myFunction()
+{
+	console.log(getInfo());
+}
+
+let myButton = document.getElementById("send");
+// In JavaScript you can either trigger an event directly on an object
+myButton.addEventListener("click", myFunction);
+
+
 */
-234

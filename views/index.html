@@ -55,7 +55,10 @@
 					<li>
 						{{burger.allergies}}
 					</li>
-				</ul>	
+				</ul>
+				<p align = "center"> 
+				<input type="checkbox" :id = "burger.name" :value = "burger.name" v-model = "checkBurg">
+				</p>
 			</div>
 		</div>
 		
@@ -66,47 +69,54 @@
 		
  </div>
 		
-		</section>	
-		<section class = "Order">
+		</section>			
+		<section>
+			
 			<h3> This is where you provide necessary information</h3>
 
 			<h4> Delivery information</h4>
+			<div id = "Order">
 			<p>
 				<label for="fullname">Full name</label><br>
-				<input type="text" id="fullname" name="fullname" required="required" placeholder="First- and last name" />
+				<input v-model="name" type="text" id="fullname" name="fullname" required="required" placeholder="First- and last name" />
+				
 			</p>
 			<p>
 				<label for="mail">E-mail</label><br>
-				<input type="email" id="email" name="mail" placeholder="E-mail address" />
+				<input v-model="mail" type="email" id="email" name="mail" placeholder="E-mail address" />
 			</p>
 			<p>
-				<label  for="street">Street</label><br>
-				<input type="text" id="street" name="street" required="required" placeholder="Street name" />
+				<label for="street">Street</label><br>
+				<input v-model="street" type="text" id="street" name="street" required="required" placeholder="Street name" />
 			</p>
 			<p>
-				<label  for="house">House</label><br>
-				<input type="number" id="house" name="house" required="required" placeholder="House number" />
+				<label for="house">House</label><br>
+				<input v-model="house" type="number" id="house" name="house" required="required" placeholder="House number" />
 			</p>
 			<p>
 				
-				<input type="radio" name="gender" value="male"> Male<br>
-				<input type="radio" name="gender" value="female"> Female<br>
-				<input type="radio" name="gender" value="non-binary"> Non-binary<br>
-				<input type="radio" name="gender" value="donotwishtoprovide" checked="checked"> Do not wish to provide
+				<input type="radio" name="gender" value="male" id = "gender" v-model="gender"> Male<br>
+				<input type="radio" name="gender" value="female" id = "gender" v-model="gender"> Female<br>
+				<input type="radio" name="gender" value="non-binary" id = "gender" v-model="gender"> Non-binary<br>
+				<input type="radio" name="gender" value="donotwishtoprovide" checked="checked" id = "gender" v-model="gender"> Do not wish to provide
 			</p>
 			
 			<p>			
 				<label for="payment method">Payment method</label><br/>
-				<select id="payment method" name="pay">
+				<select id="payment_method" name="pay" v-model="pay">
 					<option selected="selected">Card</option>
 					<option>Swish</option>
 					<option>Pay-pal</option>
 					<option>Cash</option>
 				</select>				
-			</p>
+			</p>	
+			<button v-on:click = "markDone()" type="submit" id="send">
+			<img src="https://cdna.artstation.com/p/assets/images/images/011/264/666/large/taniya-suslova-55.jpg?1528692421" width="25"/> Burger time
+			</button>
 			<p>
-			<button type="submit"><img src="https://cdna.artstation.com/p/assets/images/images/011/264/666/large/taniya-suslova-55.jpg?1528692421" width="25"/> Burger time</button>
+			{{output}}
 			</p>
+			</div>
 		</section>
 	</main>
 	<hr>

@@ -69,6 +69,9 @@ h1 {
  .column {
   float: left;
   width: 20%;
+  background-color: #123123;
+  height: 80vh;
+  display: table-cell;
   
   
 }
@@ -83,4 +86,14 @@ h1 {
 .table_wrapper{
 	display: grid;
 	background-color: #123123;
+	
+}
+
+#select{
+	position: absolute;
+}
+
+
+ul{
+	height: 20vh;
 }

@@ -43,9 +43,35 @@ let bigSuperPlantBurger = new menuItem("Big Super Plant Burger", "It's a juice b
 var menu = [HappyBurger, bigHappyBurger, bigSuperHappyBurger, bigSuperHappyFunFunBurger, bigSuperPlantBurger];
 */
 
+
+
+
 const box = new Vue({
 	el:"#burgerBoxes",
 	data:{
-		food: food
+		food: food,
+		checkBurg: [],
 	},
  });
+ 
+ 
+
+const vm = new Vue({
+    el: '#Order',
+    data: {
+        name: "",
+		mail: "",
+		street: "",
+		house: "", 
+		gender: "",
+		pay: "",
+		output: "",
+		checked: box.checkBurg,
+	},
+	methods: {
+		markDone: function() {
+			this.output = this.name + ", " + this.mail + ", " + this.street + ", " + this.house + ", " + this.gender + ", " + this.pay + ": YOUR ORDER: " + box.checkBurg;
+		}
+	}
+});
+
