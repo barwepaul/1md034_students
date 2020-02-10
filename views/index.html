@@ -2,12 +2,16 @@
 <html lang="en">
     <head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="/vue/vue.js" defer></script>
+		<script src="/socket.io/socket.io.js" defer></script>
 		<script src="js/js_script.js" defer></script>
 		<script src="js/vue_script.js" defer></script>
 		<script src="https://vuejs.org/js/vue.js"></script>
 		<script type="text/javascript" src="js/menu.js"></script>
         <title>Order burgers</title>
         <meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/deli-very.css">
     </head>
     <body>
 	<main>
@@ -70,52 +74,54 @@
  </div>
 		
 		</section>			
-		<section>
+		<section class = "Order">
 			
 			<h3> This is where you provide necessary information</h3>
 
 			<h4> Delivery information</h4>
 			<div id = "Order">
-			<p>
-				<label for="fullname">Full name</label><br>
-				<input v-model="name" type="text" id="fullname" name="fullname" required="required" placeholder="First- and last name" />
+				<p>
+					<label for="fullname">Full name</label><br>
+					<input v-model="name" type="text" id="fullname" name="fullname" required="required" placeholder="First- and last name" />
+					
+				</p>
+				<p>
+					<label for="mail">E-mail</label><br>
+					<input v-model="mail" type="email" id="email" name="mail" placeholder="E-mail address" />
+				</p>
+				<p>
+					
+					<input type="radio" name="gender" value="male" id = "gender" v-model="gender"> Male<br>
+					<input type="radio" name="gender" value="female" id = "gender" v-model="gender"> Female<br>
+					<input type="radio" name="gender" value="non-binary" id = "gender" v-model="gender"> Non-binary<br>
+					<input type="radio" name="gender" value="donotwishtoprovide" checked="checked" id = "gender" v-model="gender"> Do not wish to provide
+				</p>
 				
-			</p>
-			<p>
-				<label for="mail">E-mail</label><br>
-				<input v-model="mail" type="email" id="email" name="mail" placeholder="E-mail address" />
-			</p>
-			<p>
-				<label for="street">Street</label><br>
-				<input v-model="street" type="text" id="street" name="street" required="required" placeholder="Street name" />
-			</p>
-			<p>
-				<label for="house">House</label><br>
-				<input v-model="house" type="number" id="house" name="house" required="required" placeholder="House number" />
-			</p>
-			<p>
-				
-				<input type="radio" name="gender" value="male" id = "gender" v-model="gender"> Male<br>
-				<input type="radio" name="gender" value="female" id = "gender" v-model="gender"> Female<br>
-				<input type="radio" name="gender" value="non-binary" id = "gender" v-model="gender"> Non-binary<br>
-				<input type="radio" name="gender" value="donotwishtoprovide" checked="checked" id = "gender" v-model="gender"> Do not wish to provide
-			</p>
-			
-			<p>			
-				<label for="payment method">Payment method</label><br/>
-				<select id="payment_method" name="pay" v-model="pay">
-					<option selected="selected">Card</option>
-					<option>Swish</option>
-					<option>Pay-pal</option>
-					<option>Cash</option>
-				</select>				
-			</p>	
-			<button v-on:click = "markDone()" type="submit" id="send">
-			<img src="https://cdna.artstation.com/p/assets/images/images/011/264/666/large/taniya-suslova-55.jpg?1528692421" width="25"/> Burger time
-			</button>
-			<p>
-			{{output}}
-			</p>
+				<p>			
+					<label for="payment method">Payment method</label><br/>
+					<select id="payment_method" name="pay" v-model="pay">
+						<option selected="selected">Card</option>
+						<option>Swish</option>
+						<option>Pay-pal</option>
+						<option>Cash</option>
+					</select>				
+				</p>	
+							
+				<div class="view-box">
+					<div id="dots" v-on:click="addOrder">
+					<div 
+						v-for="(order, key) in orders"
+						v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+						{{key}}
+					</div>
+					</div>
+				</div>
+				<button v-on:click = "markDone()" type="submit" id="send">
+				<img src="https://cdna.artstation.com/p/assets/images/images/011/264/666/large/taniya-suslova-55.jpg?1528692421" width="25"/> Burger time
+				</button>
+				<p>
+				{{output}}
+				</p>
 			</div>
 		</section>
 	</main>
