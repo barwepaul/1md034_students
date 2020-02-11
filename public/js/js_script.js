@@ -92,9 +92,3 @@ myButton.addEventListener("click", myFunction);
 
 
 */
-
-
-
-
-
-

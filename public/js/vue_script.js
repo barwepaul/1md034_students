@@ -68,40 +68,34 @@ const vm = new Vue({
 		gender: "",
 		pay: "",
 		output: "",
+		id: 1,
+		details: {x: 0, y: 0},
 		orders: {},
 	},
-	created: function() {
-		socket.on('initialize', function(data) {
-			this.orders = data.orders;
-		}.bind(this));
-
-		socket.on('currentQueue', function(data) {
-			this.orders = data.orders;
-		}.bind(this));
-	},
-	methods: {
+	methods: {	
+	    addOrder: function() {
+			/* When you click in the map, a click event object is sent as parameter
+			* to the function designated in v-on:click (i.e. this one).
+			* The click event object contains among other things different
+			* coordinates that we need when calculating where in the map the click
+			* actually happened. */
+			socket.emit('addOrder', {
+				orderId: vm.id++,
+				details: vm.details,
+				orderItems: box.checkBurg,
+			});
+		},	
 		markDone: function() {
 			this.output = this.name + ", " + this.mail + ", " + this.gender + ", " + this.pay + ": YOUR ORDER: " + box.checkBurg;
 		},
-		getNext: function() {  
-			let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
-				return Math.max(last, next);
-			}, 0);
-			return lastOrder + 1;
-		},
-		addOrder: function(event) {
-			let offset = {
-				x: event.currentTarget.getBoundingClientRect().left,
-				y: event.currentTarget.getBoundingClientRect().top,
+		displayOrder: function(event) {
+			let a = event.currentTarget.getBoundingClientRect().left;
+			let b = event.currentTarget.getBoundingClientRect().top;
+		
+			this.details = {
+				x: event.clientX - 10 - a,
+				y: event.clientY - 10 - b,
 			};
-			socket.emit('addOrder', {
-				orderId: this.getNext(),
-				details: {
-				x: event.clientX - 10 - offset.x,
-				y: event.clientY - 10 - offset.y,
-			},
-			orderItems: ['Beans', 'Curry'],
-			});
 		},
 	}
 });
