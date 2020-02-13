@@ -73,21 +73,23 @@ const vm = new Vue({
 		orders: {},
 	},
 	methods: {	
+		markDone: function() {
+			this.output = this.name + ", " + this.mail + ", " + this.gender + ", " + this.pay;
+		},	
 	    addOrder: function() {
 			/* When you click in the map, a click event object is sent as parameter
 			* to the function designated in v-on:click (i.e. this one).
 			* The click event object contains among other things different
 			* coordinates that we need when calculating where in the map the click
 			* actually happened. */
+			vm.markDone(),
 			socket.emit('addOrder', {
+				Orderer: vm.output,
 				orderId: vm.id++,
 				details: vm.details,
 				orderItems: box.checkBurg,
 			});
 		},	
-		markDone: function() {
-			this.output = this.name + ", " + this.mail + ", " + this.gender + ", " + this.pay + ": YOUR ORDER: " + box.checkBurg;
-		},
 		displayOrder: function(event) {
 			let a = event.currentTarget.getBoundingClientRect().left;
 			let b = event.currentTarget.getBoundingClientRect().top;
